@@ -3,3 +3,38 @@ body{
     font-family: 'Teko', sans-serif;
     font-size: x-large;
 }
+
+.title-custom{
+    font-size: xxx-large;
+}
+
+.contact-links {
+    /* background-color: #f8f9fa; Light background color */
+    padding: 10px; /* Add padding for spacing */
+    padding-top: 0px;
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 5px; /* Add margin for separation */
+}
+
+.contact-links a {
+    display: block;
+    margin-bottom: 10px; /* Add margin between links */
+    padding: 8px;
+    background-color: #f8f9fa; /* Blue background color */
+    color: black; /* White text color */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    font-size: x-large;
+}
+
+.contact-links a:hover {
+    background-color: #e2e6ea; /* Darker blue on hover */
+}
+
+#btn-to-top {
+    display: none;
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+}
