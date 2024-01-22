@@ -41,7 +41,7 @@
     border-radius: 50%;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.58);
     color: #fff;
-    content: "";
+    content: "😱";
     font-family: fontawesome;
     font-size: 25px;
     height: 55px;
@@ -58,7 +58,7 @@
     border: 1px solid #ddd;
     box-shadow: none;
     color: #333;
-    content: "";
+    content: "😊";
 }
 #accordion .panel-body {
     background: transparent none repeat scroll 0 0;
