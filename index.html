@@ -12,9 +12,10 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="timeline.css">
-    <link rel="stylesheet" href="skill.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/skill.css">
+    <link rel="stylesheet" href="css/accordion.css">
 
     <!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap">
@@ -126,8 +127,9 @@
                                     <div class="px-4">
                                         <div class="event-date bg-soft-warning text-warning">Soon</div>
                                         <h5 class="font-size-16">Soon</h5>
-                                        <p class="text-muted">Soon Soon Soon Soon Soon Soon, Soon Soon. Soon, Soon! Soon. Soon, Soon!</p>
-                                        
+                                        <p class="text-muted">Soon Soon Soon Soon Soon Soon, Soon Soon. Soon, Soon!
+                                            Soon. Soon, Soon!</p>
+
                                     </div>
                             </ul>
                         </div>
@@ -144,6 +146,85 @@
         <div class="row">
             <h4 class="text-white title-custom"><u>Work Experience</u></h4>
         </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">Best cards</h6>
+                            <h4 class="title"><a href="#">Blue Card</a></h4>
+                            <p class="description">What all of these have in common is that they're pulling information
+                                out of the app or the service and making it relevant to the moment. </p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">Best cards</h6>
+                            <h4 class="title"><a href="#">Green Card</a></h4>
+                            <p class="description">What all of these have in common is that they're pulling information
+                                out of the app or the service and making it relevant to the moment. </p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">Best cards</h6>
+                            <h4 class="title"><a href="#">Yellow Card</a></h4>
+                            <p class="description">What all of these have in common is that they're pulling information
+                                out of the app or the service and making it relevant to the moment. </p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">Best cards</h6>
+                            <h4 class="title"><a href="#">Brown Card</a></h4>
+                            <p class="description">What all of these have in common is that they're pulling information
+                                out of the app or the service and making it relevant to the moment. </p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">Best cards</h6>
+                            <h4 class="title"><a href="#">Purple Card</a></h4>
+                            <p class="description">What all of these have in common is that they're pulling information
+                                out of the app or the service and making it relevant to the moment. </p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">Best cards</h6>
+                            <h4 class="title"><a href="#">Orange Card</a></h4>
+                            <p class="description">What all of these have in common is that they're pulling information
+                                out of the app or the service and making it relevant to the moment. </p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+        </div>
     </div>
     <!-- END OF WORK EXPERIENCE -->
 
@@ -153,75 +234,118 @@
             <h4 class="text-white title-custom"><u>Skills</u></h4>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Blue Card</a></h4>
-                            <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+            <div class="col-md-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    Why you choose Titanic?
+                                </a>
+                            </h4>
                         </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Green Card</a></h4>
-                            <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                            aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum
+                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt
+                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
+                                    aliquam vitae. Curabitur molestie eros.Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu.
+                                    Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum
+                                    laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                            </div>
                         </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Yellow Card</a></h4>
-                            <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Why Titanic best?
+                                </a>
+                            </h4>
                         </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Brown Card</a></h4>
-                            <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum
+                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt
+                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
+                                    aliquam vitae. Curabitur molestie eros.Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu.
+                                    Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum
+                                    laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                            </div>
                         </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Purple Card</a></h4>
-                            <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    How to apply Titanic jobs?
+                                </a>
+                            </h4>
                         </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Orange Card</a></h4>
-                            <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum
+                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt
+                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
+                                    aliquam vitae. Curabitur molestie eros.Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu.
+                                    Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum
+                                    laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                            </div>
                         </div>
-                    </div> <!-- end card -->
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    How experts Titanic team member?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum
+                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt
+                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
+                                    aliquam vitae. Curabitur molestie eros.Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu.
+                                    Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum
+                                    laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    How Titanic give customer support?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingFive">
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum
+                                    id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt
+                                    ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor
+                                    aliquam vitae. Curabitur molestie eros.Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu.
+                                    Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum
+                                    laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,7 +395,8 @@
                 <!-- <a href="#">Link 2</a> -->
             </div>
             <div class="col-12 col-md-4">
-                <a href="#" class="text-center"><img src="images/linkedin.svg" alt="linkedin" width="30" class="pl-2"> *** </a>
+                <a href="#" class="text-center"><img src="images/linkedin.svg" alt="linkedin" width="30" class="pl-2">
+                    *** </a>
                 <!-- <a href="#">Link 4</a> -->
             </div>
             <div class="col-12 col-md-4">
@@ -287,6 +412,10 @@
         <img src="images/bug-fill.svg" alt="">
     </button>
 
+    <!-- POP -->
+
+    <!-- END OF POP -->
+
     <!-- FIXED FOOTER -->
     <div class="container mt-5 pt-5">
         <footer class="fixed-bottom bg-light pt-2 pb-0 text-center">
@@ -298,7 +427,7 @@
 </body>
 
 <!-- Custom JS -->
-<script src="index.js"></script>
+<script src="js/index.js"></script>
 
 <!-- Ensure jQuery is included first -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

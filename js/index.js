@@ -14,7 +14,7 @@ function toggleButtonVisibility() {
 
 // Smooth scroll to top
 function scrollToTop() {
-    var duration = 1500; // Adjust the duration as needed
+    var duration = 1000; // Adjust the duration as needed
     var start = window.scrollY;
     var startTime = performance.now();
 
