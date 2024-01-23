@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/skill.css">
     <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/flip-card.css">
 
     <!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap">
@@ -50,7 +51,7 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="open-source.html">Credit</a>
+                        <a class="nav-link text-danger" href="open-source.html" title="Thanks to open source "><u>CREDIT</u></a>
                     </li>
                 </ul>
             </div>
@@ -281,31 +282,104 @@
         <div class="row">
             <h4 class="text-white title-custom"><u>Project</u></h4>
         </div>
-        <div class="row text-center">
-            <div class="col-12 col-md-4">
-                <a class="text-center">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                </a>
+
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip custom-display" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <!--  -->
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p>
+                                        <img src="images/wrench-adjustable-circle.svg" alt="airplane-engines-fill">
+                                    </p>
+                                    <h4 class="card-title">Upcoming</h4>
+                                    <p class="card-text">***
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-left mt-2">
+                                    <h4 class="card-title">Upcoming</h4>
+                                    <p class="card-text">*****************************************</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-4">
-                <a class="text-center">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                </a>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <!--  -->
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p>
+                                        <img src="images/airplane-engines-fill.svg" alt="airplane-engines-fill">
+                                    </p>
+                                    <h4 class="card-title">Car Club</h4>
+                                    <p class="card-text">Assisting club members in activating their membership online.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-left mt-2">
+                                    <h4 class="card-title">Features :</h4>
+                                    <p class="card-text">* Utilizing core PHP as the backend</p>
+                                    <p class="card-text">* Implementing APIs such as the Toyyibpay payment gateway</p>
+                                    <p class="card-text">* Email verification for registration</p>
+                                    <p class="card-text">* Admin dashboard monitoring for the club</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-4">
-                <a class="text-center">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                    <img src="images/question-diamond.svg" alt="email" width="30">
-                </a>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip custom-display" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <!--  -->
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p>
+                                        <img src="images/wrench-adjustable-circle.svg" alt="airplane-engines-fill">
+                                    </p>
+                                    <h4 class="card-title">Upcoming</h4>
+                                    <p class="card-text">***
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-left mt-2">
+                                    <h4 class="card-title">Upcoming</h4>
+                                    <p class="card-text">*****************************************</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
             </div>
+            <!-- ./Team member -->
         </div>
     </div>
-    <!-- END OF PROJECT -->
+    <!--  -->
 
     <!-- CONTACT -->
     <div class="container pt-4" id="contact">
@@ -324,7 +398,8 @@
                 <!-- <a href="#">Link 4</a> -->
             </div>
             <div class="col-12 col-md-4">
-                <a href="#" class="text-center"><img src="images/instagram.svg" alt="instagram" width="30"> rafiqun_ </a>
+                <a href="#" class="text-center"><img src="images/instagram.svg" alt="instagram" width="30"> rafiqun_
+                </a>
                 <!-- <a href="#">Link 6</a> -->
             </div>
         </div>
