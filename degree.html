@@ -10,12 +10,15 @@
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/skill.css">
-    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/accordion2.css">
     <link rel="stylesheet" href="css/flip-card.css">
 
     <!-- Font -->
@@ -38,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-success" href="diploma.html" title="Diploma "><u>DIPLOMA</u></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Highlighted Project</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -46,23 +52,85 @@
 
     <!-- INTRODUCTION -->
     <div class="container mt-4">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>In Development</u></h4>
-        </div>
+            <div class="working-process">
+                <div class="row">
+                    <div class="accordion mt-5" id="accordionExample">
+                      <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="accordian-numbers">SEMESTER 01</span> 
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="accordian-numbers">SEMESTER 02</span>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span class="accordian-numbers">SEMESTER 03</span>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <span class="accordian-numbers">SEMESTER 04</span> 
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <span class="accordian-numbers">SEMESETER 05 <span class="text-success">- INTERNSHIP</span> </span>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>           
+                      </div>
+                </div>
+            </div>
     </div>
+    
     <!-- END OF INTRODUCTION -->
 
 </body>
-
-<!-- Custom JS -->
-<script src="js/index.js"></script>
-<script src="js/timeline.js"></script>
 
 <!-- Ensure jQuery is included first -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
 <!-- Then include Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
 <!-- Finally, include Bootstrap JavaScript -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
