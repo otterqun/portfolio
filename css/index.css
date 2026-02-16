@@ -44,3 +44,10 @@ footer{
     right: 20px;
     z-index: 1000;
 }
+
+/* Justify text */
+
+.justify-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
