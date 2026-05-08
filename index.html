@@ -1,397 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafiqun :: Otterqun</title>
-    <link rel="icon" type="image/x-icon" href="images/asterisk.svg">
-
-    <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/timeline.css">
-    <link rel="stylesheet" href="css/skill.css">
-    <link rel="stylesheet" href="css/accordion.css">
-    <link rel="stylesheet" href="css/flip-card.css">
-
-    <!-- Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dontclik Rahman — AI Engineer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+<body class="theme-light">
 
-<body>
+<div class="dot-bg"></div>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
 
-    <!-- NAVIGATION -->
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto text-center mt-5 p-3 shadow">
-            <a class="navbar-brand" href="index.html">Rafiqun</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work">Work Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skill">Skill</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#project">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Social</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-success" href="diploma.html" title="Diploma "><u>DIPLOMA</u></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" href="degree.html" title="Degree "><u>DEGREE</u></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" href="open-source.html" title="Thanks to open source "><u>CREDIT</u></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<nav>
+  <div class="nav-logo">dontclik.dev</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="ui-controller">
+  <button class="toggle-btn" id="themeToggle" onclick="toggleTheme()">
+    <span class="icon adaptive-text" data-light="🌙" data-dark="☀️">🌙</span>
+    <span class="text adaptive-text" data-light="Night Mode" data-dark="Day Mode">Night Mode</span>
+  </button>
+</div>
+
+<div id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="adaptive-text" data-light="🍃 Daytime Explorer" data-dark="✨ Nighttime Builder">🍃 Daytime Explorer</span>
     </div>
-    <!-- END OF NAVIGATION -->
-
-    <!-- INTRODUCTION -->
-    <div class="container mt-4">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>Introduction</u></h4>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <h1 class="text-center mb-4">Hey, I’m Rafiq 👋</h1>
-                
-                <p class="justify-text">
-                    Welcome to my little space on the internet! I’m someone who genuinely enjoys coding, exploring new ideas,
-                    and diving into research. I’m especially interested in how technology, math, and theory can come together
-                    to solve real-world problems. I’m still figuring out my exact path but that’s the exciting part.
-                    I love learning, experimenting, and pushing myself to get better every day.
-                </p>
-                
-                <p class="justify-text">
-                    I enjoy turning ideas into something real, whether it’s building systems, testing models, or breaking down
-                    complex concepts until they truly make sense. For me, growth never stops there’s always something new
-                    to explore in the world of tech.
-                </p>
-                
-                <p class="justify-text">
-                    When I’m not in front of my laptop, you’ll probably find me playing sports, watching YouTube,
-                    or just catching up on sleep [very important 😄].
-                    Let’s connect, share ideas, and maybe build something cool together.
-                    [ <a href="#contact" class="text-warning">Click here 👀</a> ]
-                </p>
-            </div>
-        </div>
+    <h1 class="hero-name">
+      <span class="name-line1">dontclik</span>
+      <span class="name-line2">Rahman</span>
+    </h1>
+    <div class="hero-subtitle" id="typewriter"></div>
+    <p class="hero-tagline adaptive-text" 
+       data-light="Building AI-powered systems, AR experiences, and intelligent applications at the intersection of software and nature." 
+       data-dark="Illuminating digital spaces with AI-powered systems, AR experiences, and intelligent applications.">
+       Building AI-powered systems, AR experiences, and intelligent applications at the intersection of software and nature.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#" class="btn btn-outline">Download CV</a>
     </div>
-    <!-- END OF INTRODUCTION -->
+  </div>
+  <div class="scroll-hint">Scroll gently</div>
+</div>
 
-    <!-- EDUCATION -->
-    <div class="container pt-4" id="education">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>Education</u></h4>
-        </div>
-         <div class="row">
-        <div class="col">
-            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" >
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2021 - 2024</p>
-                        <p class="h6 text-white mb-0 mb-lg-0">DIMPLOMA IN SCIENCE COMPUTER</p>
-                        <p class="h6 text-success mb-0 mb-lg-0">UiTM SEGAMAT</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" >
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2024 - 2027</p>
-                        <p class="h6 text-white mb-0 mb-lg-0">BACHELOR OF INFORMATION SYSTEMS (HONS.) INTELLIGENT SYSTEMS ENGINEERING</p>
-                        <p class="h6 text-success mb-0 mb-lg-0">UiTM SHAH ALAM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="about" class="fade-up">
+  <div class="section-label">Chapter 01 — Introduction</div>
+  <h2 class="section-title">About Me</h2>
+  <div class="section-line"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm an <strong>AI Engineer & Intelligent Systems Developer</strong> with a deep interest in building machines that perceive, reason, and act. I love blending complex technology with natural, human-centric experiences.</p>
+      <p>My work spans computer vision models, RAG-based chatbots, IoT sensor networks, and full-stack applications that bring <strong>AI capabilities to real users</strong> in a seamless way.</p>
+      <p>I believe technology's highest purpose is to <strong>extend human capability</strong> while remaining grounded and accessible.</p>
+      <div class="focus-tags">
+        <span class="tag">Artificial Intelligence</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag alt">AR / VR</span>
+        <span class="tag alt">IoT Systems</span>
+        <span class="tag">Fullstack Dev</span>
+        <span class="tag">NLP</span>
+      </div>
     </div>
+    <div class="about-stats">
+      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Projects Built</div></div>
+      <div class="stat-card"><div class="stat-num">AI</div><div class="stat-label">Primary Focus</div></div>
+      <div class="stat-card"><div class="stat-num">CV</div><div class="stat-label">Computer Vision</div></div>
+      <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Continuous Growth</div></div>
     </div>
-    <!-- END OF EDUCATION -->
+  </div>
+</section>
 
-    <!-- WORK EXPERIENCE -->
-    <div class="container pt-4" id="work">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>Work Experience</u></h4>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 content-card">
-            </div>
-            <div class="col-md-4 col-sm-6 content-card">
-                <div class="card-big-shadow">
-                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                        <div class="content">
-                            <h6 class="category">Sept 2023 - Feb 2024</h6>
-                            <h4 class="title"><a>Internship</a></h4>
-                            <p class="description">
-                                I did an internship at <a href="http://www.znngroup.com/"> ZNN Group </a> .
-                            </p>
-                            <p class="description">
-                                I created a car club system with key features:
-                            <ul class="description">
-                                <li>membership payments through a gateway</li>
-                                <li>email notifications for upcoming events</li>
-                                <li>user created verification</li>
-                            </ul>
-                            </p>
-                        </div>
-                    </div> <!-- end card -->
-                </div>
-            </div>
-        </div>
+<section id="skills" class="fade-up">
+  <div class="section-label">Chapter 02 — Capabilities</div>
+  <h2 class="section-title">Tech Stack</h2>
+  <div class="section-line"></div>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <div class="skill-cat-title">AI & Machine Learning</div>
+      <div class="skill-list">
+        <span class="skill-pill">Python</span><span class="skill-pill">TensorFlow</span><span class="skill-pill">OpenCV</span><span class="skill-pill">CNN</span><span class="skill-pill">RAG</span><span class="skill-pill">NLP</span>
+      </div>
     </div>
-    <!-- END OF WORK EXPERIENCE -->
-
-    <!-- SKILLS -->
-    <div class="container pt-4" id="skill">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>Skills</u></h4>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    Programming
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Github [newbie]</li>
-                                    <li>C++ [newbie]</li>
-                                    <li>Java [newbie]</li>
-                                    <li>Phyton [newbie]</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                                    aria-expanded="true" aria-controls="collapseTwo">
-                                    Web Development
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Html , Css , Javascript , Boostrap </li>
-                                    <li>PHP</li>
-                                    <li>Mysql , PhpMyAdmin </li>
-                                    <li>Xampp , Visual Studio Code , Ngrok</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-                                    aria-expanded="true" aria-controls="collapseThree">
-                                    Data Manipulation [Still Learning]
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Notebook Jupyter [IDE] </li>
-                                    <li>Numpy [Learning]</li>
-                                    <li>Pandas [Learning]</li>
-                                    <li>Matpotlib [Not Learning Yet]</li>
-                                    <li>Scikit-learn [Not Learning Yet]</li>
-                                    <li>TensorFlow / PyTorch [Not Learning Yet]</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
-                                    aria-expanded="true" aria-controls="collapseFour">
-                                    Soft Skill
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Organization</li>
-                                    <li>Attention to Details</li>
-                                    <li>Computer skill</li>
-                                    <li>Project management</li>
-                                    <li>Initiative</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">Web Development</div>
+      <div class="skill-list">
+        <span class="skill-pill">React</span><span class="skill-pill">Flask</span><span class="skill-pill">Firebase</span><span class="skill-pill">Supabase</span><span class="skill-pill">REST APIs</span><span class="skill-pill">Node.js</span>
+      </div>
     </div>
-    <!-- END OF SKILLS -->
-
-    <!-- PROJECT -->
-    <div class="container pt-4" id="project">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>Project</u></h4>
-        </div>
-
-        <div class="row">
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <!--  -->
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p>
-                                        <img src="images/airplane-engines-fill.svg" alt="airplane-engines-fill">
-                                    </p>
-                                    <h4 class="card-title">Car Club Dashboard</h4>
-                                    <p class="card-text">Assisting club members in activating their membership online.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-left mt-6">
-                                    <h4 class="card-title">Features :</h4>
-                                    <p class="card-text">* Utilizing core PHP as the backend</p>
-                                    <p class="card-text">* Implementing APIs such as the Toyyibpay payment gateway</p>
-                                    <p class="card-text">* Email verification for registration</p>
-                                    <p class="card-text">* Admin dashboard monitoring for the club</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-            <!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="image-flip custom-display" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <!--  -->
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p>
-                                        <img src="images/wrench-adjustable-circle.svg" alt="airplane-engines-fill">
-                                    </p>
-                                    <h4 class="card-title">VisionFit: AI Eyewear Try-On Assistant Usint Deep Learning Approach</h4>
-                                    <p class="card-text">Recommend Spec Frames Base On Face Shape
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-left mt-6">
-                                    <h4 class="card-title">Features :</h4>
-                                    <p class="card-text">* Utilizing CNN Architecture: VGG16</p>
-                                    <p class="card-text">* Using Flask API to connect Frontend and Backend</p>
-                                    <p class="card-text">* Implemented Argumented Reality</p>
-                                    <p class="card-text">* Simple Web Design</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-        </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">AR / 3D</div>
+      <div class="skill-list">
+        <span class="skill-pill">Unity</span><span class="skill-pill">Vuforia</span><span class="skill-pill">Blender</span><span class="skill-pill">LiDAR</span><span class="skill-pill">AR Foundation</span>
+      </div>
     </div>
-    <!--  -->
-
-    <!-- CONTACT -->
-    <div class="container pt-4" id="contact">
-        <div class="row">
-            <h4 class="text-white title-custom"><u>Social Account</u></h4>
-        </div>
-        <div class="row contact-links">
-            <div class="col-12 col-md-4">
-                <a href="https://www.kaggle.com/otterqun" class="text-center"><img src="images/k.svg" alt="email" width="25 "> Kaggle</a>
-                <!-- <a href="#">Link 2</a> -->
-            </div>
-            <div class="col-12 col-md-4">
-                <a href="https://www.linkedin.com/in/rafiq-azizi-roslan-04abb8274" class="text-center"><img src="images/linkedin.svg" alt="linkedin" width="30" class="pl-2">
-                    Linkedin</a>
-                <!-- <a href="#">Link 4</a> -->
-            </div>
-            <div class="col-12 col-md-4">
-                <a href="https://github.com/otterqun" class="text-center"><img src="images/github.svg" alt="instagram" width="30"> Github
-                </a>
-                <!-- <a href="#">Link 6</a> -->
-            </div>
-        </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">Infrastructure</div>
+      <div class="skill-list">
+        <span class="skill-pill">GitHub</span><span class="skill-pill">Docker</span><span class="skill-pill">Figma</span><span class="skill-pill">Arduino</span><span class="skill-pill">PostgreSQL</span>
+      </div>
     </div>
-    <!-- END OF CONTANCT -->
+  </div>
+</section>
 
-    <!-- Button to Top -->
-    <button id="btn-to-top" class="btn btn-warning" onclick="scrollToTop()">
-        <img src="images/bug-fill.svg" alt="">
-    </button>
-
-    <!-- POP -->
-    <!-- END OF POP -->
-
-    <!-- FIXED FOOTER -->
-    <div class="container mt-5 pt-5">
-        <footer class="fixed-bottom bg-light pt-2 pb-0 text-center">
-            <p>2024 © Built with Bootstrap , Open Source , Chat GPT by <a href="index.html"
-                    class="text-muted">Rafiqun.</a></p>
-        </footer>
+<section id="projects" class="fade-up">
+  <div class="section-label">Chapter 03 — Featured Work</div>
+  <h2 class="section-title">Projects</h2>
+  <div class="section-line"></div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-img">
+        <div class="project-img-bg img-bg-1"><span class="proj-icon">👓</span></div>
+        <span class="proj-badge">AI + AR</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">AI Eyewear Recommendation</div>
+        <div class="project-desc">CNN-powered face shape classification with AR virtual try-on, integrated via a Flask API backend.</div>
+        <div class="project-tags"><span class="ptag">CNN</span><span class="ptag">TensorFlow</span><span class="ptag">Flask</span><span class="ptag">OpenCV</span></div>
+        <div class="project-links">
+          <a href="#" class="plink plink-gh">GitHub</a>
+          <a href="#" class="plink plink-demo">Live Demo</a>
+        </div>
+      </div>
     </div>
+    <div class="project-card">
+      <div class="project-img">
+        <div class="project-img-bg img-bg-2"><span class="proj-icon">🌊</span></div>
+        <span class="proj-badge">IoT</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">Smart Flood Alert System</div>
+        <div class="project-desc">Real-time water level monitoring using Arduino sensors with automated email alerts and data dashboard.</div>
+        <div class="project-tags"><span class="ptag">Arduino</span><span class="ptag">ESP8266</span><span class="ptag">IoT</span><span class="ptag">SMTP</span></div>
+        <div class="project-links">
+          <a href="#" class="plink plink-gh">GitHub</a>
+          <a href="#" class="plink plink-demo">Live Demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <div class="project-img-bg img-bg-3"><span class="proj-icon">🌿</span></div>
+        <span class="proj-badge">NLP</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">AI Faculty Chatbot</div>
+        <div class="project-desc">RAG-powered chatbot with OpenAI integration to help university staff and students with specific pain points.</div>
+        <div class="project-tags"><span class="ptag">RAG</span><span class="ptag">OpenAI API</span><span class="ptag">Embeddings</span></div>
+        <div class="project-links">
+          <a href="#" class="plink plink-gh">GitHub</a>
+          <a href="#" class="plink plink-demo">Live Demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <div class="project-img-bg img-bg-4"><span class="proj-icon">🧭</span></div>
+        <span class="proj-badge">AR</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">AR Indoor Navigation</div>
+        <div class="project-desc">Vuforia-based AR navigation system using LiDAR floor plan scanning for indoor wayfinding built in Unity 6.</div>
+        <div class="project-tags"><span class="ptag">Unity</span><span class="ptag">Vuforia</span><span class="ptag">LiDAR</span></div>
+        <div class="project-links">
+          <a href="#" class="plink plink-gh">GitHub</a>
+          <a href="#" class="plink plink-demo">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="experience" class="fade-up">
+  <div class="section-label">Chapter 04 — Track Record</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="section-line"></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024 — PRESENT</div>
+      <div class="timeline-role">AI Research Student</div>
+      <div class="timeline-company">University Intelligent Systems Lab</div>
+      <div class="timeline-desc">Developing computer vision models for real-world classification tasks. Focus on CNN architectures and AR integration pipelines.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot alt"></div>
+      <div class="timeline-date alt-text">2024 — 6 MONTHS</div>
+      <div class="timeline-role">Software Engineering Intern</div>
+      <div class="timeline-company">Tech Startup · Malaysia</div>
+      <div class="timeline-desc">Built and deployed Flask APIs, integrated databases, and contributed to front-end components. Gained experience in agile workflow.</div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="fade-up">
+  <div class="section-label">Chapter 05 — Background</div>
+  <h2 class="section-title">Education</h2>
+  <div class="section-line"></div>
+  <div class="edu-card">
+    <div>
+      <div class="edu-degree">B.Sc. in Intelligent Systems Engineering</div>
+      <div class="edu-uni">Universiti Teknologi Malaysia (UTM)</div>
+      <div class="edu-info" style="margin-top:.5rem">Expected Graduation: 2025 · CGPA: 3.7 / 4.0</div>
+      <div class="focus-tags" style="margin-top:1rem">
+        <span class="tag">AI & ML</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag alt">Intelligent Systems</span>
+      </div>
+    </div>
+    <div class="edu-badge-wrap">
+      <div class="edu-year">2025</div>
+      <div style="font-size:.7rem;color:var(--text-dim);text-align:right;margin-top:.25rem">EXPECTED</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="fade-up">
+  <div class="section-label">Chapter 06 — Get In Touch</div>
+  <h2 class="section-title">Contact</h2>
+  <div class="section-line"></div>
+  <div class="contact-grid">
+    <div class="contact-links">
+      <a href="mailto:dontclik@email.com" class="contact-link">
+        <div class="contact-icon">✉</div>
+        <div><div class="contact-label">Email</div><div class="contact-value">dontclik@email.com</div></div>
+      </a>
+      <a href="https://linkedin.com" class="contact-link">
+        <div class="contact-icon">in</div>
+        <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/dontclikrahman</div></div>
+      </a>
+      <a href="https://github.com" class="contact-link">
+        <div class="contact-icon">⌥</div>
+        <div><div class="contact-label">GitHub</div><div class="contact-value">github.com/dontclikrahman</div></div>
+      </a>
+    </div>
+    <div class="contact-cta">
+      <h3>Let's Grow<br><span class="glow-text">Something Intelligent</span></h3>
+      <p>Open to internships, research collaborations, and full-time roles in AI/ML engineering. If you're working on something meaningful — let's talk.</p>
+      <a href="mailto:dontclik@email.com" class="btn btn-primary" style="margin-bottom:.75rem;display:inline-block">Send Message</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-family:'Lora',serif;font-size:1.1rem;font-style:italic;color:var(--green);margin-bottom:.5rem">dontclik.dev</div>
+  <div>Crafted with care by dontclik Rahman · 2025</div>
+  <div style="margin-top:.25rem;color:var(--text-dim)">AI Engineer · Malaysia</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
-
-<!-- Custom JS -->
-<script src="js/index.js"></script>
-<script src="js/timeline.js"></script>
-
-<!-- Ensure jQuery is included first -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-<!-- Then include Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-
-<!-- Finally, include Bootstrap JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </html>
