@@ -179,6 +179,7 @@ section { padding: 6rem 2rem; max-width: 1000px; margin: 0 auto; position: relat
 .img-bg-6 { background: linear-gradient(135deg, #dff7f1, #8fd3c7); }
 .img-bg-7 { background: linear-gradient(135deg, #fcf4d9, #e6d083); }
 .img-bg-8 { background: linear-gradient(135deg, #dfe4f7, #aab5df); }
+.img-bg-9 { background: linear-gradient(135deg, #fae3d9, #f0aa89); }
 body.theme-dark .img-bg-1 { background: linear-gradient(135deg, #1B3625, #15201B); }
 body.theme-dark .img-bg-2 { background: linear-gradient(135deg, #182A30, #15201B); }
 body.theme-dark .img-bg-3 { background: linear-gradient(135deg, #362C1D, #15201B); }
@@ -187,6 +188,7 @@ body.theme-dark .img-bg-5 { background: linear-gradient(135deg, #361D27, #15201B
 body.theme-dark .img-bg-6 { background: linear-gradient(135deg, #123b35, #0f1f1c); }
 body.theme-dark .img-bg-7 { background: linear-gradient(135deg, #363118, #15201B); }
 body.theme-dark .img-bg-8 { background: linear-gradient(135deg, #202744, #15201B); }
+body.theme-dark .img-bg-9 { background: linear-gradient(135deg, #36211d, #15201B); }
 
 .proj-badge { position: absolute; top: 1rem; right: 1rem; padding: .3rem .8rem; font-size: .75rem; font-weight: 700; border-radius: 50px; background: rgba(255,255,255,0.9); color: #000; }
 body.theme-dark .proj-badge { background: rgba(0,0,0,0.6); color: #fff; }
