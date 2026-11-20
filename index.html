@@ -3,30 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rafiq Azizi Online Resume</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Rafiq Azizi — AI &amp; Software Developer</title>
+<meta name="description" content="Portfolio of Rafiq Azizi — AI & Software Developer specializing in Computer Vision, AR/VR, 3D Web Experiences, and Intelligent Systems.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-light">
 
-<div class="dot-bg"></div>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+<canvas id="atmosphereCanvas" aria-hidden="true"></canvas>
+<div class="dot-bg" aria-hidden="true"></div>
+<div class="blob blob1" aria-hidden="true"></div>
+<div class="blob blob2" aria-hidden="true"></div>
+<div class="blob blob3" aria-hidden="true"></div>
 
-<nav>
-  <div class="nav-logo">Rafiq Azizi</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Rafiq Azizi</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" data-section="about">About</a>
+    <a href="#skills" data-section="skills">Skills</a>
+    <a href="#projects" data-section="projects">Projects</a>
+    <a href="#experience" data-section="experience">Experience</a>
+    <a href="#education" data-section="education">Education</a>
+    <a href="#contact" data-section="contact">Contact</a>
   </div>
+  <div class="nav-actions">
+    <button class="cmd-trigger" id="cmdTrigger" type="button" aria-label="Open Command Palette (Ctrl+K)">
+      <span class="cmd-icon">✦</span>
+      <span class="cmd-label">Explore</span>
+      <kbd>Ctrl K</kbd>
+    </button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 </nav>
 
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+  <button type="button" class="mobile-cmd-btn" id="mobileCmdBtn">✦ Quick Explore</button>
+</div>
+
 <div class="ui-controller">
-  <button class="toggle-btn" id="themeToggle" onclick="toggleTheme()">
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <button class="toggle-btn" id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle day and night theme">
     <span class="icon adaptive-text" data-light="🌙" data-dark="☀️">🌙</span>
     <span class="text adaptive-text" data-light="Night Mode" data-dark="Day Mode">Night Mode</span>
   </button>
@@ -35,24 +62,28 @@
 <div id="hero">
   <div class="hero-content">
     <div class="hero-badge">
-      <span class="adaptive-text" data-light="🍃 Daytime Explorer" data-dark="✨ Nighttime Builder">🍃 Daytime Explorer</span>
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="adaptive-text" data-light="🍃 Daytime Explorer · Open to Collaborate" data-dark="✨ Nighttime Builder · Open to Collaborate">🍃 Daytime Explorer · Open to Collaborate</span>
     </div>
     <h1 class="hero-name">
       <span class="name-line1">Rafiq</span>
       <span class="name-line2">Azizi</span>
     </h1>
     <div class="hero-subtitle" id="typewriter"></div>
-    <p class="hero-tagline adaptive-text" 
-       data-light="Building AI-powered systems, AR experiences, and intelligent applications at the intersection of software and nature." 
+    <p class="hero-tagline adaptive-text"
+       data-light="Building AI-powered systems, AR experiences, and intelligent applications at the intersection of software and nature."
        data-dark="Illuminating digital spaces with AI-powered systems, AR experiences, and intelligent applications.">
-       Building AI-powered systems, AR experiences and intelligent applications at the intersection of software and nature.
+       Building AI-powered systems, AR experiences, and intelligent applications at the intersection of software and nature.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="Rafiq Azizi Resume.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+      <a href="Rafiq Azizi Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Download CV</a>
     </div>
   </div>
-  <div class="scroll-hint">Scroll gently</div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll to About section">
+    <span>Scroll gently</span>
+    <span class="scroll-arrow">↓</span>
+  </a>
 </div>
 
 <section id="about" class="fade-up">
@@ -61,32 +92,41 @@
   <div class="section-line"></div>
   <div class="about-grid">
     <div class="about-text">
-  <p>
-    I'm an <strong>AI & Software Developer</strong> passionate about building intelligent systems that solve real-world problems through practical and user-friendly technology solutions.
-  </p>
-
-  <p>
-    My experience includes developing <strong>AI-powered web applications, computer vision systems, AR experiences, IoT monitoring solutions, and data-driven platforms</strong> using modern development tools and machine learning technologies.
-  </p>
-
-  <p>
-    I enjoy combining software engineering with artificial intelligence to create systems that are efficient, interactive, and impactful for users and organizations.
-  </p>
-
-  <div class="focus-tags">
-    <span class="tag">Artificial Intelligence</span>
-    <span class="tag">Computer Vision</span>
-    <span class="tag alt">AR / VR</span>
-    <span class="tag alt">IoT Systems</span>
-    <span class="tag">Fullstack Development</span>
-    <span class="tag">Data Engineering</span>
-  </div>
-</div>
+      <p>
+        I'm an <strong>AI &amp; Software Developer</strong> passionate about building intelligent systems that solve real-world problems through practical and user-friendly technology solutions.
+      </p>
+      <p>
+        My experience includes developing <strong>AI-powered web applications, computer vision systems, AR experiences, IoT monitoring solutions, and data-driven platforms</strong> using modern development tools and machine learning technologies.
+      </p>
+      <p>
+        I enjoy combining software engineering with artificial intelligence to create systems that are efficient, interactive, and impactful for users and organizations.
+      </p>
+      <div class="focus-tags">
+        <span class="tag">Artificial Intelligence</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag alt">AR / VR</span>
+        <span class="tag alt">IoT Systems</span>
+        <span class="tag">Fullstack Development</span>
+        <span class="tag">Data Engineering</span>
+      </div>
+    </div>
     <div class="about-stats">
-      <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">Projects Built</div></div>
-      <div class="stat-card"><div class="stat-num">AI</div><div class="stat-label">Primary Focus</div></div>
-      <div class="stat-card"><div class="stat-num">CV</div><div class="stat-label">Computer Vision</div></div>
-      <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Continuous Growth</div></div>
+      <div class="stat-card">
+        <div class="stat-num" data-count="12">12</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">AI</div>
+        <div class="stat-label">Primary Focus</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">CV</div>
+        <div class="stat-label">Computer Vision</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Continuous Growth</div>
+      </div>
     </div>
   </div>
 </section>
@@ -95,68 +135,68 @@
   <div class="section-label">Chapter 02 — Capabilities</div>
   <h2 class="section-title">Tech Stack</h2>
   <div class="section-line"></div>
+  <p class="section-hint">Tip: Click any skill pill to search related projects.</p>
 
   <div class="skills-grid">
-
     <div class="skill-category">
-      <div class="skill-cat-title">AI & Data Analysis</div>
+      <div class="skill-cat-title">AI &amp; Data Analysis</div>
       <div class="skill-list">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">CNN</span>
-        <span class="skill-pill">OpenCV</span>
-        <span class="skill-pill">Pandas</span>
-        <span class="skill-pill">NumPy</span>
-        <span class="skill-pill">Matplotlib</span>
-        <span class="skill-pill">Seaborn</span>
+        <button type="button" class="skill-pill" data-skill="Python">Python</button>
+        <button type="button" class="skill-pill" data-skill="CNN">CNN</button>
+        <button type="button" class="skill-pill" data-skill="OpenCV">OpenCV</button>
+        <button type="button" class="skill-pill" data-skill="Pandas">Pandas</button>
+        <button type="button" class="skill-pill" data-skill="NumPy">NumPy</button>
+        <button type="button" class="skill-pill" data-skill="Matplotlib">Matplotlib</button>
+        <button type="button" class="skill-pill" data-skill="Seaborn">Seaborn</button>
       </div>
     </div>
 
     <div class="skill-category">
       <div class="skill-cat-title">Web Development</div>
       <div class="skill-list">
-        <span class="skill-pill">HTML5</span>
-        <span class="skill-pill">CSS</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">PHP</span>
-        <span class="skill-pill">Flask API</span>
-        <span class="skill-pill">REST API</span>
-        <span class="skill-pill">SQL</span>
+        <button type="button" class="skill-pill" data-skill="HTML5">HTML5</button>
+        <button type="button" class="skill-pill" data-skill="CSS">CSS</button>
+        <button type="button" class="skill-pill" data-skill="JavaScript">JavaScript</button>
+        <button type="button" class="skill-pill" data-skill="PHP">PHP</button>
+        <button type="button" class="skill-pill" data-skill="Flask">Flask API</button>
+        <button type="button" class="skill-pill" data-skill="REST API">REST API</button>
+        <button type="button" class="skill-pill" data-skill="SQL">SQL</button>
       </div>
     </div>
 
     <div class="skill-category">
-      <div class="skill-cat-title">AR & Intelligent Systems</div>
+      <div class="skill-cat-title">AR &amp; Intelligent Systems</div>
       <div class="skill-list">
-        <span class="skill-pill">Unity</span>
-        <span class="skill-pill">Vuforia</span>
-        <span class="skill-pill">IoT Systems</span>
-        <span class="skill-pill">Arduino</span>
-        <span class="skill-pill">Computer Vision</span>
+        <button type="button" class="skill-pill" data-skill="Unity">Unity</button>
+        <button type="button" class="skill-pill" data-skill="Vuforia">Vuforia</button>
+        <button type="button" class="skill-pill" data-skill="IoT">IoT Systems</button>
+        <button type="button" class="skill-pill" data-skill="Arduino">Arduino</button>
+        <button type="button" class="skill-pill" data-skill="Computer Vision">Computer Vision</button>
       </div>
     </div>
 
     <div class="skill-category">
-      <div class="skill-cat-title">Tools & Platforms</div>
+      <div class="skill-cat-title">Tools &amp; Platforms</div>
       <div class="skill-list">
-        <span class="skill-pill">Git</span>
-        <span class="skill-pill">GitHub</span>
-        <span class="skill-pill">Blender</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Canva</span>
-        <span class="skill-pill">Excel</span>
-        <span class="skill-pill">Wordpress</span>
+        <button type="button" class="skill-pill" data-skill="Git">Git</button>
+        <button type="button" class="skill-pill" data-skill="GitHub">GitHub</button>
+        <button type="button" class="skill-pill" data-skill="Blender">Blender</button>
+        <button type="button" class="skill-pill" data-skill="Power BI">Power BI</button>
+        <button type="button" class="skill-pill" data-skill="Canva">Canva</button>
+        <button type="button" class="skill-pill" data-skill="Excel">Excel</button>
+        <button type="button" class="skill-pill" data-skill="WordPress">WordPress</button>
       </div>
     </div>
 
     <div class="skill-category">
       <div class="skill-cat-title">Vibe Coding</div>
       <div class="skill-list">
-        <span class="skill-pill">Open Ai</span>
-        <span class="skill-pill">Gemini</span>
-        <span class="skill-pill">Claude</span>
+        <button type="button" class="skill-pill" data-skill="OpenAI">OpenAI</button>
+        <button type="button" class="skill-pill" data-skill="Gemini">Gemini</button>
+        <button type="button" class="skill-pill" data-skill="Claude">Claude</button>
+        <button type="button" class="skill-pill" data-skill="Antigravity">Google Antigravity</button>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -164,10 +204,87 @@
   <div class="section-label">Chapter 03 — Featured Work</div>
   <h2 class="section-title">Projects</h2>
   <div class="section-line"></div>
-  <div class="projects-grid">
-    <div class="project-card">
+
+  <div class="project-controls">
+    <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+      <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="filter-count">12</span></button>
+      <button type="button" class="filter-btn" data-filter="games" role="tab" aria-selected="false">3D &amp; Games <span class="filter-count">4</span></button>
+      <button type="button" class="filter-btn" data-filter="ai-ar" role="tab" aria-selected="false">AI &amp; AR <span class="filter-count">3</span></button>
+      <button type="button" class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Apps <span class="filter-count">3</span></button>
+      <button type="button" class="filter-btn" data-filter="iot-docs" role="tab" aria-selected="false">IoT &amp; Docs <span class="filter-count">2</span></button>
+    </div>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+    <article class="project-card" data-category="games" data-preview="https://otterqun.github.io/racer/" data-embeddable="true">
       <div class="project-img">
-        <!-- Changed icon to a package 📦 to represent inventory -->
+        <div class="project-img-bg img-bg-10"><span class="proj-icon">🏎️</span></div>
+        <span class="proj-badge">3D Web Game</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">APEX HORIZON 3D</div>
+        <div class="project-desc">A browser-based 3D WebGL motorsport circuit racing game built with Google Antigravity. Features custom 3D vehicle models, a motorsport broadcast HUD with live minimap, Web Audio engine SFX, and adaptive keyboard/touch controls.</div>
+        <div class="project-tags">
+          <span class="ptag">HTML5</span>
+          <span class="ptag">CSS3</span>
+          <span class="ptag">Vanilla JS</span>
+          <span class="ptag">WebGL</span>
+          <span class="ptag">Web Audio API</span>
+          <span class="ptag">Google Antigravity</span>
+        </div>
+        <div class="project-links">
+          <a href="https://otterqun.github.io/racer/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="games" data-preview="https://otterqun.github.io/huruf-jawi/" data-embeddable="true">
+      <div class="project-img">
+        <div class="project-img-bg img-bg-11"><span class="proj-icon">🖋️</span></div>
+        <span class="proj-badge">3D EdTech Game</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">Hikayat Jawi 3D</div>
+        <div class="project-desc">An interactive 3D educational web game built with Google Antigravity to help kids learn all 37 Jawi letters across 5 themed 3D worlds. Features 2-phase letter tracing, an interactive Jawi dictionary, 360° camera, and Web Speech API audio.</div>
+        <div class="project-tags">
+          <span class="ptag">Three.js</span>
+          <span class="ptag">Vanilla JS</span>
+          <span class="ptag">Web Speech API</span>
+          <span class="ptag">Web Audio API</span>
+          <span class="ptag">Google Antigravity</span>
+        </div>
+        <div class="project-links">
+          <a href="https://otterqun.github.io/huruf-jawi/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="games" data-preview="https://otterqun.github.io/bomber/" data-embeddable="true">
+      <div class="project-img">
+        <div class="project-img-bg img-bg-12"><span class="proj-icon">💣</span></div>
+        <span class="proj-badge">Retro Game</span>
+      </div>
+      <div class="project-body">
+        <div class="project-title">Arena Pixel Bombers</div>
+        <div class="project-desc">A 100% static, retro 16-bit top-down grid combat game built with Google Antigravity. Battle 3 AI bots (Danger Map + BFS/A* pathfinding) across 3 arena maps and 3 difficulty levels with procedural 8-bit Web Audio and mobile touch support.</div>
+        <div class="project-tags">
+          <span class="ptag">HTML5 Canvas</span>
+          <span class="ptag">Vanilla JS</span>
+          <span class="ptag">BFS / A* AI</span>
+          <span class="ptag">Web Audio API</span>
+          <span class="ptag">Google Antigravity</span>
+        </div>
+        <div class="project-links">
+          <a href="https://otterqun.github.io/bomber/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="web" data-preview="https://otterqun.github.io/inventory-management/" data-embeddable="true">
+      <div class="project-img">
         <div class="project-img-bg img-bg-9"><span class="proj-icon">📦</span></div>
         <span class="proj-badge">Web App</span>
       </div>
@@ -181,59 +298,74 @@
           <span class="ptag">HTML5-Qrcode</span>
         </div>
         <div class="project-links">
-          <!-- Link updated to your new active GitHub Pages deployment -->
-          <a href="https://otterqun.github.io/inventory-management/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo</a>
+          <a href="https://otterqun.github.io/inventory-management/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="web" data-preview="https://otterqun.github.io/datastochart/" data-embeddable="true">
       <div class="project-img">
-        <!-- Tukar ikon ke graf bar 📊 -->
         <div class="project-img-bg img-bg-8"><span class="proj-icon">📊</span></div>
         <span class="proj-badge">Web App</span>
       </div>
       <div class="project-body">
         <div class="project-title">Open Chart Generator</div>
         <div class="project-desc">A fast web application for importing Excel/CSV files (Multi-Dataset) and converting them into interactive chart visualizations. Supports PNG image exports and dynamic HTML code generation.</div>
-        <div class="project-tags"><span class="ptag">Vue 3</span><span class="ptag">Vite</span><span class="ptag">Chart.js</span><span class="ptag">Tailwind CSS</span>
+        <div class="project-tags">
+          <span class="ptag">Vue 3</span>
+          <span class="ptag">Vite</span>
+          <span class="ptag">Chart.js</span>
+          <span class="ptag">Tailwind CSS</span>
         </div>
         <div class="project-links">
-          <!-- Buka balik komen GitHub ni supaya orang boleh tengok source code -->
-          <a href="https://otterqun.github.io/datastochart/" class="plink plink-demo">Live Demo</a>
+          <a href="https://otterqun.github.io/datastochart/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="web" data-preview="https://otterqun.github.io/cameratopdf" data-embeddable="true">
       <div class="project-img">
         <div class="project-img-bg img-bg-7"><span class="proj-icon">📝</span></div>
         <span class="proj-badge">Web App</span>
       </div>
       <div class="project-body">
-        <div class="project-title">Camera to Pdf</div>
-        <div class="project-desc">A lightweight, client-side web application that instantly scans, compresses, and converts images into professional PDF documents</div>
-        <div class="project-tags"><span class="ptag">Vanilla JS</span><span class="ptag">Tailwind CSS</span><span class="ptag">jsPDF</span></div>
+        <div class="project-title">Camera to PDF</div>
+        <div class="project-desc">A lightweight, client-side web application that instantly scans, compresses, and converts images into professional PDF documents.</div>
+        <div class="project-tags">
+          <span class="ptag">Vanilla JS</span>
+          <span class="ptag">Tailwind CSS</span>
+          <span class="ptag">jsPDF</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <a href="https://otterqun.github.io/cameratopdf" class="plink plink-demo">Live Demo</a>
+          <a href="https://otterqun.github.io/cameratopdf" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="iot-docs" data-preview="https://otterqun.github.io/EasyTajwid/" data-embeddable="true">
       <div class="project-img">
         <div class="project-img-bg img-bg-5"><span class="proj-icon">ﺝ</span></div>
         <span class="proj-badge">Notes Online</span>
       </div>
       <div class="project-body">
         <div class="project-title">Easy Tajwid Notes</div>
-        <div class="project-desc">Provide a place to refer hukum tajwid that convenience for everyone</div>
-        <div class="project-tags"><span class="ptag">VitePress</span><span class="ptag">Markdown</span><span class="ptag">Typecript</span></div>
+        <div class="project-desc">Provides a clean, accessible online reference for hukum tajwid designed for quick and convenient learning by everyone.</div>
+        <div class="project-tags">
+          <span class="ptag">VitePress</span>
+          <span class="ptag">Markdown</span>
+          <span class="ptag">TypeScript</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <a href="https://otterqun.github.io/EasyTajwid/" class="plink plink-demo">Live Demo</a>
+          <a href="https://otterqun.github.io/EasyTajwid/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="ai-ar" data-preview="https://huggingface.co/spaces/otterqun/fypdemo" data-embeddable="false">
       <div class="project-img">
         <div class="project-img-bg img-bg-1"><span class="proj-icon">👓</span></div>
         <span class="proj-badge">AI + AR</span>
@@ -241,59 +373,81 @@
       <div class="project-body">
         <div class="project-title">AI Eyewear Recommendation</div>
         <div class="project-desc">CNN-powered face shape classification with AR virtual try-on, integrated via a Flask API backend.</div>
-        <div class="project-tags"><span class="ptag">CNN</span><span class="ptag">TensorFlow</span><span class="ptag">Flask</span><span class="ptag">OpenCV</span></div>
+        <div class="project-tags">
+          <span class="ptag">CNN</span>
+          <span class="ptag">TensorFlow</span>
+          <span class="ptag">Flask</span>
+          <span class="ptag">OpenCV</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <a href="https://huggingface.co/spaces/otterqun/fypdemo" class="plink plink-demo">Live Demo</a>
+          <a href="https://huggingface.co/spaces/otterqun/fypdemo" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Details</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="games" data-preview="https://otterqun.github.io/Kosa/" data-embeddable="true">
       <div class="project-img">
         <div class="project-img-bg img-bg-6"><span class="proj-icon">📖</span></div>
         <span class="proj-badge">Mini Game</span>
       </div>
       <div class="project-body">
         <div class="project-title">Kosa Kata Game</div>
-        <div class="project-desc">Mini game to play which test user for word guessinng in Malay</div>
-        <div class="project-tags"><span class="ptag">Vue</span><span class="ptag">Pinia</span><span class="ptag">Tailwind</span></div>
+        <div class="project-desc">An interactive Malay word-guessing mini game built to challenge vocabulary and pattern recognition.</div>
+        <div class="project-tags">
+          <span class="ptag">Vue</span>
+          <span class="ptag">Pinia</span>
+          <span class="ptag">Tailwind</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <a href="https://otterqun.github.io/Kosa/" class="plink plink-demo">Live Demo</a>
+          <a href="https://otterqun.github.io/Kosa/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="iot-docs" data-preview="https://otterqun.github.io/IotSmartFloodDetection/" data-embeddable="true">
       <div class="project-img">
         <div class="project-img-bg img-bg-2"><span class="proj-icon">🌊</span></div>
         <span class="proj-badge">IoT</span>
       </div>
       <div class="project-body">
         <div class="project-title">Smart Flood Alert System</div>
-        <div class="project-desc">Real-time water level monitoring using Arduino sensors with automated email alerts and data dashboard.</div>
-        <div class="project-tags"><span class="ptag">Arduino</span><span class="ptag">ESP8266</span><span class="ptag">IoT</span><span class="ptag">SMTP</span></div>
+        <div class="project-desc">Real-time water level monitoring using Arduino sensors with automated email alerts and a live data dashboard.</div>
+        <div class="project-tags">
+          <span class="ptag">Arduino</span>
+          <span class="ptag">ESP8266</span>
+          <span class="ptag">IoT</span>
+          <span class="ptag">SMTP</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <a href="https://otterqun.github.io/IotSmartFloodDetection/" class="plink plink-demo">Live Demo</a>
+          <a href="https://otterqun.github.io/IotSmartFloodDetection/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Quick Preview</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="ai-ar" data-preview="https://fest.utm.my/" data-embeddable="false">
       <div class="project-img">
         <div class="project-img-bg img-bg-3"><span class="proj-icon">🌿</span></div>
         <span class="proj-badge">NLP</span>
       </div>
       <div class="project-body">
         <div class="project-title">AI Faculty Chatbot</div>
-        <div class="project-desc">RAG-powered chatbot with OpenAI integration to help university staff and students with specific pain points.</div>
-        <div class="project-tags"><span class="ptag">RAG</span><span class="ptag">OpenAI API</span><span class="ptag">Embeddings</span></div>
+        <div class="project-desc">RAG-powered chatbot with OpenAI integration to help university staff and students resolve faculty queries quickly.</div>
+        <div class="project-tags">
+          <span class="ptag">RAG</span>
+          <span class="ptag">OpenAI API</span>
+          <span class="ptag">Embeddings</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <a href="https://fest.utm.my/" class="plink plink-demo">Live Demo</a>
+          <a href="https://fest.utm.my/" target="_blank" rel="noopener noreferrer" class="plink plink-demo">Live Demo ↗</a>
+          <button type="button" class="plink plink-preview">Details</button>
         </div>
       </div>
-    </div>
-    <div class="project-card">
+    </article>
+
+    <article class="project-card" data-category="ai-ar" data-preview="" data-embeddable="false">
       <div class="project-img">
         <div class="project-img-bg img-bg-4"><span class="proj-icon">🧭</span></div>
         <span class="proj-badge">AR</span>
@@ -301,13 +455,21 @@
       <div class="project-body">
         <div class="project-title">AR Indoor Navigation</div>
         <div class="project-desc">Vuforia-based AR navigation system using LiDAR floor plan scanning for indoor wayfinding built in Unity 6.</div>
-        <div class="project-tags"><span class="ptag">Unity</span><span class="ptag">Vuforia</span><span class="ptag">LiDAR</span></div>
+        <div class="project-tags">
+          <span class="ptag">Unity</span>
+          <span class="ptag">Vuforia</span>
+          <span class="ptag">LiDAR</span>
+        </div>
         <div class="project-links">
-          <!-- <a href="#" class="plink plink-gh">GitHub</a> -->
-          <!-- <a href="#" class="plink plink-demo">Live Demo</a> -->
+          <button type="button" class="plink plink-preview">Details</button>
         </div>
       </div>
-    </div>
+    </article>
+  </div>
+
+  <div class="projects-empty" id="projectsEmpty" hidden>
+    <p>No projects match that filter. Try another keyword or reset to All.</p>
+    <button type="button" class="btn btn-outline" id="resetProjectFilters">Show All Projects</button>
   </div>
 </section>
 
@@ -319,18 +481,18 @@
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">2026 — PRESENT</div>
-      <div class="timeline-role">AI & Software Development Intern</div>
+      <div class="timeline-role">AI &amp; Software Development Intern</div>
       <div class="timeline-company">Jom Mahir SDN BHD</div>
-      <div class="timeline-desc">- Configured and deployed a WordPress-based chatbot plugin for both company and client websites, improving user engagement and automating responses to frequently asked queries.</div>
-      <div class="timeline-desc">- Assisted in developing an Augmented Reality (AR) application using Unity and Vuforia, implementing model target tracking for car engine visualization to support interactive and educational use cases.</div>
+      <div class="timeline-desc">• Configured and deployed a WordPress-based chatbot plugin for both company and client websites, improving user engagement and automating responses to frequently asked queries.</div>
+      <div class="timeline-desc">• Assisted in developing an Augmented Reality (AR) application using Unity and Vuforia, implementing model target tracking for car engine visualization to support interactive and educational use cases.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot alt"></div>
-      <div class="timeline-date alt-text">2023   — 2024</div>
+      <div class="timeline-date alt-text">2023 — 2024</div>
       <div class="timeline-role">Software Development Intern</div>
       <div class="timeline-company">ZNN Technology Centre SDN BHD</div>
-      <div class="timeline-desc">- Developed a car club system with features for membership payments, event notifications, and user verification. Designed a user verification system to enhance security and account authenticity.</div>
-      <div class="timeline-desc">- Integrated a payment gateway for secure and automated membership transactions. Implemented email notifications to keep users informed about upcoming events.</div>
+      <div class="timeline-desc">• Developed a car club system with features for membership payments, event notifications, and user verification. Designed a user verification system to enhance security and account authenticity.</div>
+      <div class="timeline-desc">• Integrated a payment gateway for secure and automated membership transactions. Implemented email notifications to keep users informed about upcoming events.</div>
     </div>
   </div>
 </section>
@@ -342,31 +504,31 @@
   <div class="edu-card">
     <div>
       <div class="edu-degree">Bachelor of Information Systems (Hons.) Intelligent Systems Engineering</div>
-      <div class="edu-uni">Universiti Teknologi Mara (UiTM)</div>
+      <div class="edu-uni">Universiti Teknologi MARA (UiTM)</div>
       <div class="focus-tags" style="margin-top:1rem">
-        <span class="tag">AI & ML</span>
+        <span class="tag">AI &amp; ML</span>
         <span class="tag">Computer Vision</span>
         <span class="tag alt">Intelligent Systems</span>
       </div>
     </div>
     <div class="edu-badge-wrap">
       <div class="edu-year">2026</div>
-      <div style="font-size:.7rem;color:var(--text-dim);text-align:right;margin-top:.25rem">EXPECTED</div>
+      <div class="edu-status">EXPECTED</div>
     </div>
   </div>
-  <div class="edu-card" style="margin-top:0.5rem">
+  <div class="edu-card" style="margin-top:1rem">
     <div>
       <div class="edu-degree">Diploma in Computer Science</div>
-      <div class="edu-uni">Universiti Teknologi Mara (UiTM)</div>
+      <div class="edu-uni">Universiti Teknologi MARA (UiTM)</div>
       <div class="focus-tags" style="margin-top:1rem">
         <span class="tag">Web Development</span>
-        <span class="tag">Php</span>
-        <span class="tag alt">Sql</span>
+        <span class="tag">PHP</span>
+        <span class="tag alt">SQL</span>
       </div>
     </div>
     <div class="edu-badge-wrap">
       <div class="edu-year">2024</div>
-      <div style="font-size:.7rem;color:var(--text-dim);text-align:right;margin-top:.25rem">EXPECTED</div>
+      <div class="edu-status">COMPLETED</div>
     </div>
   </div>
 </section>
@@ -377,33 +539,118 @@
   <div class="section-line"></div>
   <div class="contact-grid">
     <div class="contact-links">
-      <a href="#" class="contact-link">
-        <div class="contact-icon">✉</div>
-        <div><div class="contact-label">Email</div><div class="contact-value">Not Available</div></div>
-      </a>
-      <a href="https://www.linkedin.com/in/rafiq-azizi-roslan-04abb8274" class="contact-link">
+      <a href="https://www.linkedin.com/in/rafiq-azizi-roslan-04abb8274" target="_blank" rel="noopener noreferrer" class="contact-link">
         <div class="contact-icon">in</div>
-        <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/rafiqazizi</div></div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/rafiqazizi</div>
+        </div>
+        <span class="contact-arrow">↗</span>
       </a>
-      <a href="https://github.com/otterqun" class="contact-link">
+      <a href="https://github.com/otterqun" target="_blank" rel="noopener noreferrer" class="contact-link">
         <div class="contact-icon">⌥</div>
-        <div><div class="contact-label">GitHub</div><div class="contact-value">github.com/otterqun</div></div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">github.com/otterqun</div>
+        </div>
+        <span class="contact-arrow">↗</span>
       </a>
+      <button type="button" class="contact-link contact-copy-btn" id="copyPortfolioBtn">
+        <div class="contact-icon">🔗</div>
+        <div>
+          <div class="contact-label">Share Portfolio</div>
+          <div class="contact-value">Copy profile link to clipboard</div>
+        </div>
+        <span class="contact-arrow">⧉</span>
+      </button>
     </div>
     <div class="contact-cta">
       <h3>Let's Grow<br><span class="glow-text">Something Intelligent</span></h3>
-      <p>Open to freelance, research collaborations, and technoloy discussion. If you're working on something meaningful — let's talk.</p>
-      <a href="#" class="btn btn-primary" style="margin-bottom:.75rem;display:inline-block">Send Message</a>
-      <!-- <a href="mailto:dontclik@email.com" class="btn btn-primary" style="margin-bottom:.75rem;display:inline-block">Send Message</a> -->
+      <p>Open to freelance, research collaborations, and technology discussions. If you're working on something meaningful — let's talk.</p>
+      <div class="contact-cta-btns">
+        <button type="button" class="btn btn-primary" id="openMessageModal">Draft a Message</button>
+        <a href="https://www.linkedin.com/in/rafiq-azizi-roslan-04abb8274" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Connect on LinkedIn</a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div style="font-family:'Lora',serif;font-size:1.1rem;font-style:italic;color:var(--green);margin-bottom:.5rem">Rafiq Azizi</div>
-  <div>Crafted & designed with care by Ai · 2026</div>
-  <div style="margin-top:.25rem;color:var(--text-dim)">Technology Enthutiast · Malaysia</div>
+  <div class="footer-brand">Rafiq Azizi</div>
+  <div>Crafted &amp; designed with care · 2026</div>
+  <div class="footer-sub">Technology Enthusiast · Malaysia</div>
 </footer>
+
+<!-- PROJECT PREVIEW MODAL -->
+<div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-dialog modal-project">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close modal">✕</button>
+    <div class="modal-banner" id="modalBanner">
+      <span class="modal-banner-icon" id="modalIcon"></span>
+      <span class="proj-badge" id="modalBadge"></span>
+    </div>
+    <div class="modal-body">
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="project-tags" id="modalTags"></div>
+
+      <div class="modal-embed-area" id="modalEmbedArea" hidden>
+        <div class="modal-embed-bar">
+          <span>Interactive Live Preview</span>
+          <button type="button" class="plink" id="closeEmbedBtn">Hide Preview</button>
+        </div>
+        <iframe id="modalIframe" title="Project Live Preview" loading="lazy"></iframe>
+      </div>
+
+      <div class="modal-actions">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modalLiveBtn">Open Live Demo ↗</a>
+        <button type="button" class="btn btn-outline" id="modalLoadPreviewBtn" hidden>▶ Load Live Preview</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMMAND PALETTE MODAL -->
+<div class="modal-backdrop" id="cmdModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick Explore">
+  <div class="modal-dialog modal-cmd">
+    <div class="cmd-header">
+      <span class="cmd-search-icon">✦</span>
+      <input type="text" id="cmdInput" class="cmd-input" placeholder="Search projects, sections, or quick actions..." autocomplete="off">
+      <kbd class="cmd-esc">ESC</kbd>
+    </div>
+    <div class="cmd-results" id="cmdResults"></div>
+  </div>
+</div>
+
+<!-- QUICK MESSAGE MODAL -->
+<div class="modal-backdrop" id="messageModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="msgModalTitle">
+  <div class="modal-dialog modal-msg">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close modal">✕</button>
+    <h3 class="modal-title" id="msgModalTitle">Draft a Message</h3>
+    <p class="modal-desc">Write a quick note below — copy it in one click and send it directly via LinkedIn.</p>
+    <form id="quickMsgForm" class="msg-form">
+      <label class="msg-label">
+        Your Name
+        <input type="text" id="msgName" required placeholder="e.g. Sarah from Acme Labs">
+      </label>
+      <label class="msg-label">
+        Topic
+        <input type="text" id="msgTopic" required placeholder="e.g. AI Project Collaboration / Opportunity">
+      </label>
+      <label class="msg-label">
+        Message
+        <textarea id="msgBody" rows="4" required placeholder="Hi Rafiq, I checked out your portfolio and would love to connect about..."></textarea>
+      </label>
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Copy Message &amp; Open LinkedIn ↗</button>
+        <button type="button" class="btn btn-outline" id="copyOnlyMsgBtn">Copy Only</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>
