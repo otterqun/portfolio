@@ -374,6 +374,16 @@ const closeEmbedBtn = document.getElementById('closeEmbedBtn');
 let currentPreviewUrl = '';
 let lastFocusedElement = null;
 
+function isGitHubUrl(url) {
+  if (!url) return false;
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host === 'github.io' || host.endsWith('.github.io') || host === 'github.com' || host.endsWith('.github.com');
+  } catch {
+    return false;
+  }
+}
+
 function openModal(backdrop) {
   if (!backdrop) return;
   lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -427,9 +437,10 @@ function openProjectModal(card) {
   }
 
   const isMobileOrTablet = window.matchMedia('(max-width: 1024px)').matches;
+  const canPreview = embeddable && isGitHubUrl(previewUrl);
   modalEmbedArea.hidden = true;
   modalIframe.src = 'about:blank';
-  modalLoadPreviewBtn.hidden = isMobileOrTablet || !(embeddable && previewUrl);
+  modalLoadPreviewBtn.hidden = isMobileOrTablet || !canPreview;
 
   openModal(projectModal);
 }
@@ -443,7 +454,7 @@ projectCards.forEach(card => {
 
 if (modalLoadPreviewBtn) {
   modalLoadPreviewBtn.addEventListener('click', () => {
-    if (!currentPreviewUrl) return;
+    if (!isGitHubUrl(currentPreviewUrl)) return;
     modalIframe.src = currentPreviewUrl;
     modalEmbedArea.hidden = false;
     modalLoadPreviewBtn.hidden = true;
